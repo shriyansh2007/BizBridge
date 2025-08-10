@@ -1,0 +1,15 @@
+BizBridge MVP - Quick Start
+
+1. Open terminal and go to the BizBridge folder.
+2. Run:
+   npm install
+   npm run dev
+
+3. App will start on http://localhost:5173
+
+MockAPI URL in use: https://689864beddf05523e55ec8b5.mockapi.io
+
+To restore demo data:
+- Go to your MockAPI dashboard.
+- Select the `organizations` resource -> Import -> Paste contents of organizations.json
+- Select the `posts` resource -> Import -> Paste contents of posts.json

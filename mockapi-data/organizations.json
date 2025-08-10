@@ -1,0 +1,24 @@
+[
+  {
+    "id": "1",
+    "name": "BrightTech MSME",
+    "email": "bright@msme.com",
+    "password": "123",
+    "organizationType": "MSME",
+    "about": "Innovative MSME providing solar tech solutions.",
+    "ventures": ["SolarRoof 2.0", "EcoLight Panels"],
+    "ceoName": "Amit Verma",
+    "ceoBio": "Passionate about renewable energy."
+  },
+  {
+    "id": "2",
+    "name": "GlobalEnterprises",
+    "email": "contact@global.com",
+    "password": "123",
+    "organizationType": "Enterprise",
+    "about": "A large enterprise working in infrastructure projects.",
+    "ventures": ["SkyBridge", "Urban Metro Expansion"],
+    "ceoName": "Rohit Singh",
+    "ceoBio": "Leading innovation in large-scale infrastructure."
+  }
+]

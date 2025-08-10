@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "authorId": "1",
+    "authorName": "BrightTech MSME",
+    "authorType": "MSME",
+    "content": "We just installed 500 new solar panels in rural areas!",
+    "media": "https://via.placeholder.com/400x200.png?text=Solar+Project",
+    "likes": 12,
+    "interested": 5,
+    "reposts": 2,
+    "reachouts": 3
+  },
+  {
+    "id": "2",
+    "authorId": "2",
+    "authorName": "GlobalEnterprises",
+    "authorType": "Enterprise",
+    "content": "Looking for MSME partners for a new smart city project.",
+    "media": "https://via.placeholder.com/400x200.png?text=Smart+City",
+    "likes": 20,
+    "interested": 10,
+    "reposts": 4,
+    "reachouts": 8
+  }
+]
