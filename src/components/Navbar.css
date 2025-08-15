@@ -1,0 +1,14 @@
+:root{
+--green-dark: #46A41C;
+--green-light: #45A31B; 
+}
+#navbar{
+    background-color:var(--green-dark);
+    color:rgb(239, 220, 220);
+    font-size:1.3rem;
+
+ }
+#logo{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size:2rem;
+}

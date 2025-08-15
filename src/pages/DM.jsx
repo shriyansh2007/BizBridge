@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState } from "react";
+import Navbar from "../components/Navbar";
 import API from "../services/api";
 
 export default function DM() {
@@ -24,6 +25,7 @@ export default function DM() {
 
   return (
     <div className="p-4 max-w-xl mx-auto">
+      <Navbar/>
       <h1 className="text-xl font-bold mb-4">Chat with {orgName}</h1>
 
       {/* Chat messages */}

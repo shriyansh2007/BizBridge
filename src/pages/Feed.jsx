@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 
 export default function Feed() {
+  const [showModal, setShowModal] = useState(false);
   const [posts, setPosts] = useState([]);
   const user = JSON.parse(localStorage.getItem("user"));
   const navigate = useNavigate();
@@ -14,26 +15,44 @@ export default function Feed() {
     API.get("/posts").then(res => setPosts(res.data));
   }, []);
 
-  const createPost = async () => {
-    const content = prompt("Enter post content:");
-    if (content) {
-      const newPost = {
-        authorId: user.id,
-        authorName: user.name,
-        authorType: user.organizationType,
-        content,
-        media: "",
-        likes: 0,
-        interested: 0
-      };
-      await API.post("/posts", newPost);
-      setPosts([...posts, newPost]);
+  const handleNewPost = async (data) => {
+    const newPost = {
+      authorId: user.id,
+      authorName: user.username,
+      authorType: "Organization",
+      content: data.description,
+      imageUrl: data.imageUrl,
+      createdAt: new Date().toISOString()
+    };
+
+    try {
+      const res = await API.post("/posts", newPost);
+      setPosts([res.data, ...posts]);
+    } catch (err) {
+      console.error("Error creating post:", err);
     }
   };
 
+  // const createPost = async () => {
+  //   const content = prompt("Enter post content:");
+  //   if (content) {
+  //     const newPost = {
+  //       authorId: user.id,
+  //       authorName: user.name,
+  //       authorType: user.organizationType,
+  //       content,
+  //       media: "",
+  //       likes: 0,
+  //       interested: 0
+  //     };
+  //     await API.post("/posts", newPost);
+  //     setPosts([...posts, newPost]);
+  //   }
+  // };
+
   return (
     <div className="p-4 max-w-xl mx-auto">
-      <Navbar onCreatePost={createPost} />
+      <Navbar onCreatePost={handleNewPost} />
       {/* <div className="flex justify-between mb-4">
         <h2 className="text-2xl font-bold">BizBridge Feed</h2>
         <Link to={`/profile/${user?.id}`} className="text-blue-500">Profile</Link>
