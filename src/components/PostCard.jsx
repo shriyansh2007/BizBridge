@@ -12,7 +12,7 @@ export default function PostCard({ post }) {
       <div className="flex gap-4 mt-3 text-sm">
         <button onClick={() => setInterested(interested + 1)}>Interested {interested}</button>
         <button onClick={() => setLikes(likes + 1)}>Like {likes}</button>
-        {/* Reach Out Button */}
+        
         <Link
           to={`/dm/${post.authorId}`}
           className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600"

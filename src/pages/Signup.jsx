@@ -25,7 +25,7 @@ export default function SignUp() {
     e.preventDefault();
 
     try {
-      // Fetch existing organizations to find next ID
+      
       const res = await API.get("/organizations");
       const existingUsers = res.data;
       const maxId = Math.max(...existingUsers.map(u => parseInt(u.id)), 0);
@@ -34,7 +34,7 @@ export default function SignUp() {
       const newUser = {
         id: newId,
         ...form,
-        ventures: form.ventures.split(",").map(v => v.trim()) // Convert comma-separated ventures to array
+        ventures: form.ventures.split(",").map(v => v.trim()) 
       };
 
       await API.post("/organizations", newUser);

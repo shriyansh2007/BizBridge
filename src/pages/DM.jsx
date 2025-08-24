@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import API from "../services/api";
@@ -8,7 +8,7 @@ export default function DM() {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
   const user = JSON.parse(localStorage.getItem("user"));
-
+  const navigate = useNavigate();
   const sendMessage = () => {
     if (!newMessage.trim()) return;
 
@@ -55,6 +55,15 @@ export default function DM() {
         >
           Send
         </button>
+        <div>
+          <button
+          onClick={() => navigate(-1)}
+          
+        >
+          Back
+        </button>
+        </div>
+        
       </div>
     </div>
   );

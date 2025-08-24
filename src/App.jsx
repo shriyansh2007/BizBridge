@@ -6,6 +6,7 @@ import Profile from "./pages/Profile";
 import DM from "./pages/DM";
 import Explore from "./pages/Explore";
 import Home from "./pages/Home";
+import OrganizationProfile from "./pages/OrganizationProfile";
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
         <Route path="/feed" element={<Feed />} />
         <Route path="/profile/:id" element={<Profile />} />
         <Route path="/explore" element={<Explore />} />
+        <Route path="/organization/:id" element={<OrganizationProfile/>}/>
       </Routes>
     </Router>
   );

@@ -33,7 +33,7 @@ export default function Navbar({ onCreatePost }) {
           <button
             onClick={() => {
               localStorage.removeItem("user");
-              navigate("/login");
+              navigate("/home");
             }}
             className="bg-red-500 px-3 py-1 rounded hover:bg-red-600"
           >
