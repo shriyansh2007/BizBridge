@@ -32,7 +32,7 @@ export default function Explore() {
                     to={`/organization/${org.id}`}
                     className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600"
                   >
-                    Reach Out
+                    View Profile
                   </Link>
                 </div>
 
