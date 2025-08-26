@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Avatar from "./Avatar";
 export default function PostCard({ post }) {
   const [isLiked, setIsLiked]= useState(false);
   const [likes, setLikes] = useState(post.likes);
@@ -35,7 +36,7 @@ export default function PostCard({ post }) {
 
   return (
     <div className="bg-white shadow rounded p-4 mb-4">
-      <div className="font-bold">{post.authorName} ({post.authorType})</div>
+      <div className="font-bold">{<Avatar name={post.authorName}/>} {post.authorName} ({post.authorType})</div>
       <p className="mt-2">{post.content}</p>
       {post.media && <img src={post.media} alt="media" className="mt-2 rounded max-h-60" />}
       <div className="flex gap-4 mt-3 text-sm">

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import API from "../services/api";
 import Navbar from "../components/Navbar";
+import Avatar from "../components/Avatar";
 
 export default function Explore() {
   const [organizations, setOrganizations] = useState([]);
@@ -23,6 +24,7 @@ export default function Explore() {
           <div className="grid gap-4 md:grid-cols-2">
             {organizations.map(org => (
               <div key={org.id} className="p-4 border rounded-lg shadow-md bg-white">
+                <Avatar name={org.name}/>
                 <h3 className="text-lg font-bold">{org.name}</h3>
                 <p className="text-gray-600">{org.organizationType}</p>
                 <p className="mt-2">{org.about}</p>
