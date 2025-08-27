@@ -48,8 +48,10 @@ useEffect(() => {
   }
 
   return (
+    <>
+    <Navbar/>
     <div className="p-4 max-w-xl mx-auto">
-      <Navbar/>
+      
       {/* {org.media && <img src={org.media} alt="media" className="mt-2 rounded max-h-60" />} */}
       <Avatar name={org.name} />
       <h1 className="text-4xl font-bold">{org.name}</h1>
@@ -69,5 +71,8 @@ useEffect(() => {
       <p>{org.ceoBio}</p>
 
     </div>
+
+    </>
+    
   );
 }

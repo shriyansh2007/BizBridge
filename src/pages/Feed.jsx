@@ -53,8 +53,10 @@ export default function Feed() {
   // };
 
   return (
+    <>
+    <Navbar onCreatePost={handleNewPost} />
     <div className="p-4 max-w-xl mx-auto xyz">
-      <Navbar onCreatePost={handleNewPost} />
+      
       {/* <div className="flex justify-between mb-4">
         <h2 className="text-2xl font-bold">BizBridge Feed</h2>
         <Link to={`/profile/${user?.id}`} className="text-blue-500">Profile</Link>
@@ -62,5 +64,9 @@ export default function Feed() {
       <button onClick={createPost} className="bg-blue-500 text-white px-4 py-2 rounded mb-4">+ Post</button> */}
       {posts.map(p => <PostCard key={p.id} post={p} />)}
     </div>
+
+    </>
+    
   );
 }
+// p-4 max-w-xl mx-auto xyz
