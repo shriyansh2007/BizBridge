@@ -13,7 +13,7 @@ export default function Navbar({ onCreatePost }) {
 
   return (
     <>
-      <nav id="navbar" className="bg-blue-600 text-white px-6 py-3 flex justify-between items-center shadow-md sticky top-0">
+      <nav id="navbar" className="nav bg-blue-600 text-white px-6 py-3 flex justify-between items-center shadow-md sticky top-0">
         <h1 id="logo" className="text-lg font-bold">BizBridge</h1>
         <div className="flex gap-6">
           <Link to="/feed" className="hover:underline">Feed</Link>
