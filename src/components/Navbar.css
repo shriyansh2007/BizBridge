@@ -1,17 +1,114 @@
-:root{
---green-dark: #46A41C;
---green-light: #45A31B; 
+/* Navbar Container */
+.navbar {
+  background-color: #2563eb; /* Tailwind: bg-blue-600 */
+  color: white;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 50;
 }
-#navbar{
-    background-color:var(--green-dark);
-    color:rgb(239, 220, 220);
-    font-size:1.3rem;
 
- }
-#logo{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size:2rem;
+/* Logo */
+.logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
 }
-.nav{
-    background-color: green;
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Post Button */
+.post-btn {
+  background-color: white;
+  color: #2563eb;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.post-btn:hover {
+  background-color: #f1f5f9; /* Tailwind: bg-gray-100 */
+}
+
+/* Logout Button */
+.logout-btn {
+  background-color: #ef4444; /* Tailwind: bg-red-500 */
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.logout-btn:hover {
+  background-color: #dc2626; /* Tailwind: bg-red-600 */
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #2563eb;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 220px;
+    padding: 15px;
+    gap: 15px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+  }
+
+  .nav-links a,
+  .post-btn,
+  .logout-btn {
+    width: 100%;
+    text-align: left;
+  }
 }
