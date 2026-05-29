@@ -70,9 +70,9 @@ export default function Home() {
       <div className="home-right">
         
         {/* FLOATING CARD 1 */}
-        <div className="floating-card card-1">
+        {/* <div className="floating-card card-1">
           🌍 Global Networking
-        </div>
+        </div> */}
 
         {/* IMAGE */}
         <div className="image-wrapper">
@@ -84,9 +84,9 @@ export default function Home() {
         </div>
 
         {/* FLOATING CARD 2 */}
-        <div className="floating-card card-2">
+        {/* <div className="floating-card card-2">
           🤝 Collaboration Hub
-        </div>
+        </div> */}
       </div>
     </div>
   );
