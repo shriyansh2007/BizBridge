@@ -1,103 +1,397 @@
-/* Main Container */
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
 .home-container {
+  position: relative;
+
+  min-height: 100vh;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 100vh;
-  background-color: #f9fafb; /* Tailwind: bg-gray-100 */
-  padding: 40px 60px;
-  gap: 30px;
+
+  gap: 60px;
+
+  padding: 60px 80px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f8fbff 0%,
+      #eef4ff 50%,
+      #ffffff 100%
+    );
 }
 
-/* Left Section */
+/* =========================
+   BACKGROUND BLURS
+========================= */
+
+.bg-blur {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(90px);
+  z-index: 0;
+}
+
+.blur-1 {
+  width: 320px;
+  height: 320px;
+
+  background: rgba(37, 99, 235, 0.18);
+
+  top: -100px;
+  left: -100px;
+}
+
+.blur-2 {
+  width: 360px;
+  height: 360px;
+
+  background: rgba(99, 102, 241, 0.15);
+
+  bottom: -120px;
+  right: -120px;
+}
+
+/* =========================
+   LEFT SECTION
+========================= */
+
 .home-left {
+  position: relative;
+  z-index: 2;
+
   flex: 1;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.main-heading {
-  font-size: 3.5rem;
-  font-weight: bold;
-  margin-bottom: 15px;
-  color: #1e3a8a; /* Tailwind: blue-900 */
+/* BADGE */
+
+.top-badge {
+  width: fit-content;
+
+  background: rgba(37, 99, 235, 0.1);
+
+  color: #2563eb;
+
+  border: 1px solid rgba(37, 99, 235, 0.15);
+
+  padding: 10px 18px;
+
+  border-radius: 999px;
+
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  margin-bottom: 24px;
+
+  backdrop-filter: blur(10px);
 }
+
+/* MAIN HEADING */
+
+.main-heading {
+  font-size: 5rem;
+  line-height: 1.05;
+
+  font-weight: 900;
+
+  color: #0f172a;
+
+  margin-bottom: 18px;
+}
+
+/* SUB HEADING */
 
 .sub-heading {
   font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: #111827; /* Tailwind: gray-900 */
+  font-weight: 800;
+
+  color: #1e293b;
+
+  margin-bottom: 24px;
 }
+
+.sub-heading span {
+  background: linear-gradient(
+    to right,
+    #2563eb,
+    #7c3aed
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* DESCRIPTION */
 
 .description {
-  font-size: 1.1rem;
-  color: #374151; /* Tailwind: gray-700 */
-  margin-bottom: 30px;
-  max-width: 500px;
+  max-width: 620px;
+
+  font-size: 1.15rem;
+  line-height: 1.9;
+
+  color: #475569;
+
+  margin-bottom: 40px;
 }
 
-/* Buttons Group */
+/* =========================
+   STATS
+========================= */
+
+.stats-container {
+  display: flex;
+  gap: 18px;
+
+  margin-bottom: 42px;
+
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  min-width: 130px;
+
+  background: rgba(255, 255, 255, 0.75);
+
+  border: 1px solid rgba(255, 255, 255, 0.5);
+
+  backdrop-filter: blur(14px);
+
+  padding: 18px 22px;
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.05);
+}
+
+.stat-card h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+
+  color: #2563eb;
+}
+
+.stat-card p {
+  margin-top: 4px;
+
+  color: #64748b;
+
+  font-size: 0.95rem;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
 .btn-group {
   display: flex;
-  gap: 20px;
+  gap: 18px;
+
+  flex-wrap: wrap;
 }
 
-.signup-btn {
-  background-color: #22c55e; /* Tailwind: green-500 */
-  color: white;
-  padding: 12px 30px;
-  border-radius: 8px;
-  font-weight: bold;
+.signup-btn,
+.login-btn {
   text-decoration: none;
-  transition: background 0.3s ease;
+
+  padding: 16px 34px;
+
+  border-radius: 20px;
+
+  font-weight: 700;
+  font-size: 1rem;
+
+  transition: all 0.3s ease;
+}
+
+/* SIGNUP */
+
+.signup-btn {
+  background:
+    linear-gradient(
+      to right,
+      #2563eb,
+      #4f46e5
+    );
+
+  color: white;
+
+  box-shadow:
+    0 15px 30px rgba(37, 99, 235, 0.25);
 }
 
 .signup-btn:hover {
-  background-color: #16a34a; /* Tailwind: green-600 */
+  transform: translateY(-3px) scale(1.02);
 }
 
+/* LOGIN */
+
 .login-btn {
-  background-color: #2563eb; /* Tailwind: blue-600 */
-  color: white;
-  padding: 12px 30px;
-  border-radius: 8px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background 0.3s ease;
+  background: white;
+
+  color: #2563eb;
+
+  border: 1px solid #dbeafe;
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.05);
 }
 
 .login-btn:hover {
-  background-color: #1d4ed8; /* Tailwind: blue-700 */
+  transform: translateY(-3px);
+  background: #f8fafc;
 }
 
-/* Right Section */
+/* =========================
+   RIGHT SECTION
+========================= */
+
 .home-right {
+  position: relative;
+  z-index: 2;
+
   flex: 1;
+
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+/* IMAGE WRAPPER */
+
+.image-wrapper {
+  position: relative;
+
+  background: rgba(255, 255, 255, 0.6);
+
+  border: 1px solid rgba(255, 255, 255, 0.5);
+
+  border-radius: 36px;
+
+  padding: 20px;
+
+  backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.08);
 }
 
 .home-image {
-  width: 520px;
+  width: 560px;
   max-width: 100%;
   height: auto;
-  border-radius: 10px;
+
+  border-radius: 28px;
+
+  object-fit: cover;
 }
 
-/* -------------------- RESPONSIVE DESIGN -------------------- */
+/* =========================
+   FLOATING CARDS
+========================= */
 
-/* Tablet View */
+.floating-card {
+  position: absolute;
+
+  background: rgba(255, 255, 255, 0.85);
+
+  border: 1px solid rgba(255, 255, 255, 0.6);
+
+  backdrop-filter: blur(14px);
+
+  padding: 14px 18px;
+
+  border-radius: 18px;
+
+  font-weight: 700;
+
+  color: #0f172a;
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.08);
+
+  animation: float 4s ease-in-out infinite;
+}
+
+.card-1 {
+  top: 12%;
+  left: 0;
+}
+
+.card-2 {
+  bottom: 10%;
+  right: 0;
+}
+
+/* FLOAT ANIMATION */
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* =========================
+   TABLET
+========================= */
+
 @media screen and (max-width: 992px) {
+
   .home-container {
     flex-direction: column;
+
     text-align: center;
-    padding: 30px;
+
+    padding: 50px 28px;
+
+    gap: 50px;
   }
 
   .home-left {
     align-items: center;
+  }
+
+  .main-heading {
+    font-size: 4rem;
+  }
+
+  .sub-heading {
+    font-size: 2rem;
+  }
+
+  .description {
+    max-width: 90%;
+  }
+
+  .stats-container {
+    justify-content: center;
   }
 
   .btn-group {
@@ -105,44 +399,101 @@
   }
 
   .home-image {
-    width: 420px;
-    margin-top: 30px;
+    width: 470px;
+  }
+
+  .card-1 {
+    left: 5%;
+  }
+
+  .card-2 {
+    right: 5%;
   }
 }
 
-/* Mobile View */
+/* =========================
+   MOBILE
+========================= */
+
 @media screen and (max-width: 600px) {
+
   .home-container {
-    padding: 20px;
+    padding: 30px 18px;
+  }
+
+  .top-badge {
+    font-size: 0.8rem;
+    padding: 8px 14px;
   }
 
   .main-heading {
-    font-size: 2rem;
+    font-size: 2.8rem;
   }
 
   .sub-heading {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .description {
     font-size: 1rem;
-    max-width: 90%;
+    line-height: 1.7;
+
+    max-width: 100%;
+  }
+
+  .stats-container {
+    gap: 12px;
+  }
+
+  .stat-card {
+    flex: 1;
+    min-width: 100px;
+
+    padding: 16px;
+  }
+
+  .stat-card h3 {
+    font-size: 1.4rem;
   }
 
   .btn-group {
-    flex-direction: column;
-    gap: 15px;
     width: 100%;
+
+    flex-direction: column;
   }
 
   .signup-btn,
   .login-btn {
     width: 100%;
     text-align: center;
-    padding: 10px 0;
+
+    padding: 15px 0;
+  }
+
+  .image-wrapper {
+    padding: 12px;
+    border-radius: 28px;
   }
 
   .home-image {
-    width: 320px;
+    width: 100%;
+    max-width: 340px;
+    border-radius: 22px;
+  }
+
+  .floating-card {
+    font-size: 0.8rem;
+
+    padding: 10px 14px;
+  }
+
+  .card-1 {
+    top: -5%;
+    left: 2%;
+  }
+
+  .card-2 {
+    bottom: -5%;
+    right: 2%;
   }
 }
