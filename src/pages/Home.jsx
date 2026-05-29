@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./Home.css";
-
+import homeImage from "../media/images/home-top-right.webp";
 export default function Home() {
   return (
     <div className="home-container">
@@ -77,7 +77,7 @@ export default function Home() {
         {/* IMAGE */}
         <div className="image-wrapper">
           <img
-            src="src/media/images/home-top-right.webp"
+            src={homeImage}
             alt="BizBridge illustration"
             className="home-image"
           />
